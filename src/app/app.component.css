@@ -1,6 +1,6 @@
 main {
     background: -webkit-radial-gradient(top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-    font-size: 1.5vw;
+    font-size: 2vw;
     height: 100vh;
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
@@ -9,6 +9,8 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
 .score-mode {
@@ -17,7 +19,7 @@ main {
     display: flex;
     flex-direction: row;
     margin-top: 4%;
-    outline: 6px solid hsl(217, 16%, 45%);
+    outline: 0.3vw solid hsl(217, 16%, 45%);
     padding: 1.5vw;
 }
 
@@ -34,16 +36,20 @@ main {
     background-color: white;
     margin-left: auto;
     border-radius: 0.5vw;
-    padding: 0 3.7vw;
+    padding: 1vw 3.7vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: -0.8vw;
+    margin-right: -0.8vw;
+    margin-bottom: -0.5vw;
 }
 
 .score-txt {
     color: hsl(229, 64%, 46%);
     font-size: 1vw;
+    margin-bottom: -0.6vw !important;
 }
 
 .puntos {
@@ -70,6 +76,10 @@ main {
     position: relative;
 }
 
+.margin-negativo {
+    margin: -0.65vw auto !important;
+}
+
 .papel {
     width: 70%;
     border-radius: 70%;
@@ -79,10 +89,11 @@ main {
     position: absolute;
     top: -34%;
     left: -34%;
-    box-shadow: 0px 12px 0px -2px hsl(229.7, 80.7%, 53.3%);
+    box-shadow: 0px 0.7vw 0px -0.1vw hsl(229.7, 80.7%, 53.3%);
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .tijera {
@@ -94,10 +105,11 @@ main {
     position: absolute;
     top: -34%;
     right: -34%;
-    box-shadow: 0px 12px 0px -2px hsl(39, 91%, 35%);
+    box-shadow: 0px 0.7vw 0px -0.1vw hsl(39, 91%, 35%);
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .piedra {
@@ -110,10 +122,11 @@ main {
     bottom: -22%;
     left: 0;
     right: 0;
-    box-shadow: 0px 12px 0px -2px hsl(349, 74%, 36%);
+    box-shadow: 0px 0.7vw 0px -0.1vw hsl(349, 74%, 36%);
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .content-img {
@@ -124,9 +137,44 @@ main {
     border-radius: 80%;
     background-color: white;
     height: 80%;
-    box-shadow: inset 0 12px 0px -5px #d0d0d0;
+    box-shadow: inset 0px 0.7vw 0px -0.1vw #d0d0d0;
 }
 
 .content-img img {
     width: 45%;
+}
+
+.resultado {
+    background-color: transparent;
+    color: white;
+    padding: 0.8vw 3vw;
+    border: 0.15vw solid white;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: 3vw;
+    margin-right: 3vw;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-size: 1.05vw;
+}
+
+.content-rules {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rules {
+    background-color: white;
+    padding: 0.8vw 3.5vw;
+    border-radius: 1vw;
+    color: #4a4c53;
+    font-size: 2.2vw;
+}
+
+.rules img {
+    width: 22vw;
 }
