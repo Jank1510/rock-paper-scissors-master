@@ -12,22 +12,48 @@
             </div>
         </div>
         <div class="juego">
-            <div class="eleccion">
+            <div *ngIf="eleccion" class="eleccion">
                 <div class="background-triangulo">
                     <img src="../assets/bg-triangle.svg" alt="bg-triangle">
-                    <div class="papel">
+                    <div (click)="papel()" class="papel">
                         <div class="content-img">
                             <img src="../assets/icon-paper.svg" alt="icon-paper">
                         </div>
                     </div>
-                    <div class="tijera">
+                    <div (click)="tijera()" class="tijera">
                         <div class="content-img">
                             <img src="../assets/icon-scissors.svg" alt="icon-paper">
                         </div>
                     </div>
-                    <div class="piedra">
+                    <div (click)="piedra()" class="piedra">
                         <div class="content-img">
                             <img src="../assets/icon-rock.svg" alt="icon-paper">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div [ngStyle]="{'animation-name':opacity}" *ngIf="proceso" class="proceso">
+                <!--Eleccion del usuario-->
+                <div class="my-pick center">
+                    <p>YOU PICKED</p>
+                    <div class="{{clase}} proceso-seleccion-detalles">
+                        <div class="content-img">
+                            <img src="{{seleccion}}" alt="icon-paper">
+                        </div>
+                    </div>
+                </div>
+                <!--Efecto de espera-->
+                <div *ngIf="cargandoRespuesta" class="center respuestaCargada">
+                    <p>THE HOUSE PICKED</p>
+                    <div class="house-picked-black ">
+                    </div>
+                </div>
+                <!--Eleccion de la maquina-->
+                <div class="respuestaCargada center" *ngIf="respuestaCargada">
+                    <p>THE HOUSE PICKED</p>
+                    <div class="{{EleccionMaquinaClase}} proceso-seleccion-detalles ">
+                        <div class="content-img">
+                            <img src="{{EleccionMaquinaIMG}}" alt="icon-paper">
                         </div>
                     </div>
                 </div>
@@ -35,12 +61,16 @@
 
 
         </div>
-        <button class="resultado">RULES</button>
-        <div class="content-rules">
-            <div class="rules">
-                <p>RULES
+        <button (click)="openRules()" class="resultado">RULES</button>
+        <div *ngIf="rules" [ngStyle]="{'animation-name':opacity}" class="content-rules">
+            <div [ngStyle]="{'animation-name':opacity}" class="rules">
+                <div>
                     <p>
-                        <img src="../assets/image-rules.svg" alt="Rules-img">
+                        RULES
+                    </p>
+                    <img (click)="closedRules()" src="../assets/icon-close.svg" alt="icon-close">
+                </div>
+                <img src="../assets/image-rules.svg" alt="Rules-img">
             </div>
         </div>
     </div>
