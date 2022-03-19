@@ -16,9 +16,12 @@ export class AppComponent {
   clase!: string
   cargandoRespuesta!: boolean
   respuestaCargada!: boolean
-  EleccionMaquinaClase!:string
-  EleccionMaquinaIMG!:string
-
+  EleccionMaquinaClase!: string
+  EleccionMaquinaIMG!: string
+  MostrarResultado!:boolean
+  resultadoJuego!:string
+  disenoCapasUsuario!:string
+  disenoCapaMaquina!:string
   closedRules() {
     this.opacity = 'opacityClosed'
     setTimeout(() => {
@@ -37,9 +40,24 @@ export class AppComponent {
     this.clase = 'papel'
     this.cargandoRespuesta = true
     this.opacity = 'opacityOpen'
-    this.getRandomIntInclusive(1,3)
-    
+    this.EleccionDeLaMaquina(1, 3)
+    setTimeout(() => {
+      this.MostrarResultado=true
+      if (this.EleccionMaquinaClase === 'tijera') {
+        this.resultadoJuego='YOU LOSE'
+        this.disenoCapaMaquina='capasDiseño'
 
+      } else {
+        if (this.EleccionMaquinaClase === 'papel') {        
+          this.resultadoJuego='YOU TIED'
+        } else {
+          if (this.EleccionMaquinaClase === 'piedra') {
+        this.resultadoJuego='YOU WIN'
+        this.disenoCapasUsuario='capasDiseño'
+          }
+        }
+      }
+    }, 2500);
   }
   piedra() {
     this.eleccion = false
@@ -48,7 +66,23 @@ export class AppComponent {
     this.clase = 'piedra'
     this.cargandoRespuesta = true
     this.opacity = 'opacityOpen'
-
+    this.EleccionDeLaMaquina(1, 3)
+    setTimeout(() => {
+      this.MostrarResultado=true
+      if (this.EleccionMaquinaClase === 'tijera') {
+        this.resultadoJuego='YOU WIN'
+        this.disenoCapasUsuario='capasDiseño'
+      } else {
+        if (this.EleccionMaquinaClase === 'papel') {        
+          this.resultadoJuego='YOU LOSE'
+          this.disenoCapaMaquina='capasDiseño'
+        } else {
+          if (this.EleccionMaquinaClase === 'piedra') {
+        this.resultadoJuego='YOU TIED'
+          }
+        }
+      }
+    }, 2500);
   }
   tijera() {
     this.eleccion = false
@@ -56,40 +90,64 @@ export class AppComponent {
     this.clase = 'tijera'
     this.cargandoRespuesta = true
     this.opacity = 'opacityOpen'
+    this.EleccionDeLaMaquina(1, 3)
     this.seleccion = '../assets/icon-scissors.svg'
+    setTimeout(() => {
+      this.MostrarResultado=true
+      if (this.EleccionMaquinaClase === 'tijera') {
+        this.resultadoJuego='YOU TIED'
+      } else {
+        if (this.EleccionMaquinaClase === 'papel') {        
+          this.resultadoJuego='YOU WIN'
+        this.disenoCapasUsuario='capasDiseño'
+        } else {
+          if (this.EleccionMaquinaClase === 'piedra') {
+        this.resultadoJuego='YOU LOSE'
+        this.disenoCapaMaquina='capasDiseño'
+          }
+        }
+      }
+    }, 2500);
   }
-  getRandomIntInclusive(min: any, max: any) {
+
+  EleccionDeLaMaquina(min: any, max: any) {
     min = Math.ceil(min);
     max = Math.floor(max);
     var randomValor = Math.floor(Math.random() * (max - min + 1)) + min; // El máximo y el mínimo son inclusivos.
     if (randomValor == 1) {
-      console.log('papel')
       setTimeout(() => {
-        this.EleccionMaquinaClase='papel'
-        this.EleccionMaquinaIMG='../assets/icon-paper.svg'
-        this.cargandoRespuesta=false
-        this.respuestaCargada=true
+        this.EleccionMaquinaClase = 'papel'
+        this.EleccionMaquinaIMG = '../assets/icon-paper.svg'
+        this.cargandoRespuesta = false
+        this.respuestaCargada = true
       }, 1500);
     } else {
       if (randomValor == 2) {
-        console.log('piedra')
         setTimeout(() => {
-          this.EleccionMaquinaClase='piedra'
-          this.EleccionMaquinaIMG='../assets/icon-rock.svg'
-          this.cargandoRespuesta=false
-          this.respuestaCargada=true
+          this.EleccionMaquinaClase = 'piedra'
+          this.EleccionMaquinaIMG = '../assets/icon-rock.svg'
+          this.cargandoRespuesta = false
+          this.respuestaCargada = true
         }, 1500);
       } else {
         if (randomValor == 3) {
-          console.log('tijera')
           setTimeout(() => {
-            this.EleccionMaquinaClase='tijera'
-            this.EleccionMaquinaIMG='../assets/icon-scissors.svg'
-            this.cargandoRespuesta=false
-            this.respuestaCargada=true
+            this.EleccionMaquinaClase = 'tijera'
+            this.EleccionMaquinaIMG = '../assets/icon-scissors.svg'
+            this.cargandoRespuesta = false
+            this.respuestaCargada = true
           }, 1500);
         }
       }
     }
+  }
+  PlayAgain(){
+    this.proceso=false
+    this.eleccion=true
+    this.MostrarResultado=false
+    this.cargandoRespuesta=false
+    this.respuestaCargada=false
+    this.disenoCapaMaquina=''
+    this.disenoCapasUsuario=''
   }
 }

@@ -36,11 +36,16 @@
                 <!--Eleccion del usuario-->
                 <div class="my-pick center">
                     <p>YOU PICKED</p>
-                    <div class="{{clase}} proceso-seleccion-detalles">
+                    <div class="{{clase}} proceso-seleccion-detalles  {{disenoCapasUsuario}}">
                         <div class="content-img">
                             <img src="{{seleccion}}" alt="icon-paper">
                         </div>
                     </div>
+                </div>
+                <!--Resultado y playAgain-->
+                <div *ngIf="MostrarResultado" class="resultados">
+                    <p>{{resultadoJuego}}</p>
+                    <button (click)="PlayAgain()">PLAY AGAIN</button>
                 </div>
                 <!--Efecto de espera-->
                 <div *ngIf="cargandoRespuesta" class="center respuestaCargada">
@@ -49,9 +54,9 @@
                     </div>
                 </div>
                 <!--Eleccion de la maquina-->
-                <div class="respuestaCargada center" *ngIf="respuestaCargada">
+                <div class="respuestaCargada center " *ngIf="respuestaCargada">
                     <p>THE HOUSE PICKED</p>
-                    <div class="{{EleccionMaquinaClase}} proceso-seleccion-detalles ">
+                    <div class="{{EleccionMaquinaClase}} proceso-seleccion-detalles {{disenoCapaMaquina}} ">
                         <div class="content-img">
                             <img src="{{EleccionMaquinaIMG}}" alt="icon-paper">
                         </div>
