@@ -18,10 +18,11 @@ export class AppComponent {
   respuestaCargada!: boolean
   EleccionMaquinaClase!: string
   EleccionMaquinaIMG!: string
-  MostrarResultado!:boolean
-  resultadoJuego!:string
-  disenoCapasUsuario!:string
-  disenoCapaMaquina!:string
+  MostrarResultado!: boolean
+  resultadoJuego!: string
+  disenoCapasUsuario!: string
+  disenoCapaMaquina!: string
+  score: number = 0
   closedRules() {
     this.opacity = 'opacityClosed'
     setTimeout(() => {
@@ -42,18 +43,21 @@ export class AppComponent {
     this.opacity = 'opacityOpen'
     this.EleccionDeLaMaquina(1, 3)
     setTimeout(() => {
-      this.MostrarResultado=true
+      this.MostrarResultado = true
       if (this.EleccionMaquinaClase === 'tijera') {
-        this.resultadoJuego='YOU LOSE'
-        this.disenoCapaMaquina='capasDiseño'
+        this.resultadoJuego = 'YOU LOSE'
+        this.disenoCapaMaquina = 'capasDiseño'
+        this.score = this.score - 1
 
       } else {
-        if (this.EleccionMaquinaClase === 'papel') {        
-          this.resultadoJuego='YOU TIED'
+        if (this.EleccionMaquinaClase === 'papel') {
+          this.resultadoJuego = 'YOU TIED'
         } else {
           if (this.EleccionMaquinaClase === 'piedra') {
-        this.resultadoJuego='YOU WIN'
-        this.disenoCapasUsuario='capasDiseño'
+            this.resultadoJuego = 'YOU WIN'
+            this.disenoCapasUsuario = 'capasDiseño'
+            this.score = this.score + 1
+
           }
         }
       }
@@ -68,17 +72,22 @@ export class AppComponent {
     this.opacity = 'opacityOpen'
     this.EleccionDeLaMaquina(1, 3)
     setTimeout(() => {
-      this.MostrarResultado=true
+      this.MostrarResultado = true
       if (this.EleccionMaquinaClase === 'tijera') {
-        this.resultadoJuego='YOU WIN'
-        this.disenoCapasUsuario='capasDiseño'
+        this.resultadoJuego = 'YOU WIN'
+        this.disenoCapasUsuario = 'capasDiseño'
+        this.score = this.score + 1
+
       } else {
-        if (this.EleccionMaquinaClase === 'papel') {        
-          this.resultadoJuego='YOU LOSE'
-          this.disenoCapaMaquina='capasDiseño'
+        if (this.EleccionMaquinaClase === 'papel') {
+          this.resultadoJuego = 'YOU LOSE'
+          this.disenoCapaMaquina = 'capasDiseño'
+          this.score = this.score - 1
+
         } else {
           if (this.EleccionMaquinaClase === 'piedra') {
-        this.resultadoJuego='YOU TIED'
+            this.resultadoJuego = 'YOU TIED'
+
           }
         }
       }
@@ -93,17 +102,21 @@ export class AppComponent {
     this.EleccionDeLaMaquina(1, 3)
     this.seleccion = '../assets/icon-scissors.svg'
     setTimeout(() => {
-      this.MostrarResultado=true
+      this.MostrarResultado = true
       if (this.EleccionMaquinaClase === 'tijera') {
-        this.resultadoJuego='YOU TIED'
+        this.resultadoJuego = 'YOU TIED'
       } else {
-        if (this.EleccionMaquinaClase === 'papel') {        
-          this.resultadoJuego='YOU WIN'
-        this.disenoCapasUsuario='capasDiseño'
+        if (this.EleccionMaquinaClase === 'papel') {
+          this.resultadoJuego = 'YOU WIN'
+          this.disenoCapasUsuario = 'capasDiseño'
+          this.score = this.score + 1
+
         } else {
           if (this.EleccionMaquinaClase === 'piedra') {
-        this.resultadoJuego='YOU LOSE'
-        this.disenoCapaMaquina='capasDiseño'
+            this.resultadoJuego = 'YOU LOSE'
+            this.disenoCapaMaquina = 'capasDiseño'
+            this.score = this.score - 1
+
           }
         }
       }
@@ -141,13 +154,13 @@ export class AppComponent {
       }
     }
   }
-  PlayAgain(){
-    this.proceso=false
-    this.eleccion=true
-    this.MostrarResultado=false
-    this.cargandoRespuesta=false
-    this.respuestaCargada=false
-    this.disenoCapaMaquina=''
-    this.disenoCapasUsuario=''
+  PlayAgain() {
+    this.proceso = false
+    this.eleccion = true
+    this.MostrarResultado = false
+    this.cargandoRespuesta = false
+    this.respuestaCargada = false
+    this.disenoCapaMaquina = ''
+    this.disenoCapasUsuario = ''
   }
 }
