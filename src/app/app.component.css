@@ -1,6 +1,5 @@
 main {
     background: -webkit-radial-gradient(top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-    font-size: 2vw;
     height: 100vh;
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
@@ -14,13 +13,11 @@ main {
 }
 
 .score-mode {
-    width: 50vw;
     border-radius: 1vw;
     display: flex;
     flex-direction: row;
     margin-top: 4%;
     outline: 0.3vw solid hsl(217, 16%, 45%);
-    padding: 1.5vw;
 }
 
 .score-mode div p {
@@ -48,12 +45,10 @@ main {
 
 .score-txt {
     color: hsl(229, 64%, 46%);
-    font-size: 1vw;
     margin-bottom: -0.6vw !important;
 }
 
 .puntos {
-    font-size: 2.7vw;
     font-weight: bold;
     color: hsl(229, 25%, 31%);
 }
@@ -144,20 +139,6 @@ main {
     width: 45%;
 }
 
-.resultado {
-    background-color: transparent;
-    color: white;
-    padding: 0.8vw 3vw;
-    border: 0.15vw solid white;
-    margin-top: auto;
-    margin-left: auto;
-    margin-bottom: 3vw;
-    margin-right: 3vw;
-    border-radius: 0.5vw;
-    cursor: pointer;
-    font-size: 1.05vw;
-}
-
 .content-rules {
     position: absolute;
     width: 100%;
@@ -171,10 +152,8 @@ main {
 
 .rules {
     background-color: white;
-    padding: 2vw 3vw;
     border-radius: 1vw;
     color: #4a4c53;
-    font-size: 2.2vw;
     animation-duration: 0.5s;
 }
 
@@ -194,24 +173,9 @@ main {
     cursor: pointer;
 }
 
-.rules img {
-    width: 22vw;
-}
-
 .eleccion {
     animation-name: zoomResultados;
     animation-duration: 0.5s;
-}
-
-.house-picked-black {
-    width: 12vw;
-    height: 12vw;
-    background-color: #192037;
-    border-radius: 13vw;
-    margin-top: 10vw;
-    position: absolute;
-    left: auto;
-    top: 0;
 }
 
 .proceso {
@@ -227,8 +191,6 @@ main {
 .my-pick {
     margin-right: 6vw;
     position: relative;
-    height: 18vw;
-    width: 18vw;
 }
 
 .proceso-seleccion-detalles {
@@ -246,8 +208,6 @@ main {
 .respuestaCargada {
     animation-duration: 0.7s;
     position: relative;
-    height: 18vw;
-    width: 18vw;
 }
 
 .center {
@@ -258,54 +218,11 @@ main {
 .resultados {
     margin-left: -5vw;
     margin-right: 1vw;
-    margin-top: auto;
-    width: 12vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     animation-name: zoomResultados;
     animation-duration: 0.5s;
-}
-
-.resultados p {
-    font-size: 3vw;
-    margin-bottom: 1vw;
-}
-
-.resultados button {
-    padding: 0.6vw 3vw;
-    border: none;
-    border-radius: 0.4vw;
-    font-size: 1vw;
-    cursor: pointer;
-}
-
-.capasDiseño::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    box-shadow: 0 0 0 12vw #ffffff05;
-    animation-duration: 1.2s;
-    animation-name: zoomResultados;
-}
-
-.capasDiseño::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    animation-name: zoomResultados;
-    animation-duration: 0.8s;
-    box-shadow: 0 0 0 8vw #ffffff0a;
-}
-
-.capasDiseño {
-    animation-name: zoomResultados;
-    box-shadow: 0 0 0 4vw #ffffff0f;
-    animation-duration: 0.4s;
 }
 
 @keyframes zoomResultados {
@@ -332,5 +249,231 @@ main {
     }
     to {
         opacity: 0%;
+    }
+}
+
+@media (min-width: 360px) {
+    .juego {
+        width: 100vw;
+        margin-top: 10vh;
+    }
+    main {
+        font-size: 6vw;
+    }
+    .score-mode {
+        width: 85vw;
+        padding: 4.5vw;
+    }
+    .score-txt {
+        font-size: 4vw;
+    }
+    .puntos {
+        font-size: 10.7vw;
+    }
+    .background-triangulo {
+        width: 55%;
+    }
+    .resultado {
+        background-color: transparent;
+        color: white;
+        padding: 1.8vw 8vw;
+        border: 0.15vw solid white;
+        margin-top: auto;
+        margin-left: 0;
+        margin-bottom: 18vw;
+        margin-right: 0;
+        border-radius: 1.5vw;
+        cursor: pointer;
+        font-size: 7.05vw;
+    }
+    .rules {
+        padding: 14vw 7vw;
+        font-size: 7.2vw;
+    }
+    .rules img {
+        width: 100%;
+    }
+    .rules div img {
+        width: 7vw;
+        height: 7vw;
+    }
+    .my-pick {
+        height: 40vw;
+        width: 40vw;
+    }
+    .respuestaCargada {
+        height: 40vw;
+        width: 40vw;
+    }
+    .resultados {
+        margin-top: 20vw;
+        width: 75vw;
+        position: absolute;
+    }
+    .resultados p {
+        font-size: 6vw;
+        margin-bottom: 3vw;
+    }
+    .resultados button {
+        padding: 2.6vw 15vw;
+        border: none;
+        border-radius: 2.4vw;
+        font-size: 5vw;
+        cursor: pointer;
+    }
+    .proceso p {
+        margin-top: 52vw;
+        font-size: 4.5vw;
+    }
+    .house-picked-black {
+        width: 30vw;
+        height: 30vw;
+        background-color: #192037;
+        border-radius: 40vw;
+        margin-top: 12.7vw;
+        position: absolute;
+        left: auto;
+        top: 0;
+    }
+    .capasDiseño::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        box-shadow: 0 0 0 30vw #ffffff05;
+        animation-duration: 1.2s;
+        animation-name: zoomResultados;
+    }
+    .capasDiseño::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        animation-name: zoomResultados;
+        animation-duration: 0.8s;
+        box-shadow: 0 0 0 20vw #ffffff0a;
+    }
+    .capasDiseño {
+        animation-name: zoomResultados;
+        box-shadow: 0 0 0 10vw #ffffff0f;
+        animation-duration: 0.4s;
+    }
+    .resultados p {
+        font-size: 10.5vw;
+    }
+}
+
+@media (min-width: 1281px) {
+    .juego {
+        width: 50vw;
+        margin-top: 0;
+    }
+    main {
+        font-size: 2vw;
+    }
+    .score-mode {
+        width: 50vw;
+        padding: 1.5vw;
+    }
+    .score-txt {
+        font-size: 1vw;
+    }
+    .puntos {
+        font-size: 2.7vw;
+    }
+    .background-triangulo {
+        width: 42%;
+    }
+    .resultado {
+        background-color: transparent;
+        color: white;
+        padding: 0.8vw 3vw;
+        border: 0.15vw solid white;
+        margin-top: auto;
+        margin-left: auto;
+        margin-bottom: 3vw;
+        margin-right: 3vw;
+        border-radius: 0.5vw;
+        cursor: pointer;
+        font-size: 1.05vw;
+    }
+    .rules {
+        padding: 2vw 3vw;
+        font-size: 2.2vw;
+    }
+    .rules img {
+        width: 22vw;
+    }
+    .rules div img {
+        width: 2vw;
+        height: 2vw;
+    }
+    .my-pick {
+        height: 18vw;
+        width: 18vw;
+    }
+    .respuestaCargada {
+        height: 18vw;
+        width: 18vw;
+    }
+    .resultados {
+        margin-top: auto;
+        width: 12vw;
+        position: relative;
+    }
+    .resultados p {
+        font-size: 3vw;
+        margin-bottom: 1vw;
+    }
+    .resultados button {
+        padding: 0.6vw 3vw;
+        border: none;
+        border-radius: 0.4vw;
+        font-size: 1vw;
+        cursor: pointer;
+    }
+    .proceso p {
+        margin-top: 1vw;
+        font-size: 1.5vw;
+    }
+    .house-picked-black {
+        width: 12vw;
+        height: 12vw;
+        background-color: #192037;
+        border-radius: 13vw;
+        margin-top: 10vw;
+        position: absolute;
+        left: auto;
+        top: 0;
+    }
+    .capasDiseño::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        box-shadow: 0 0 0 12vw #ffffff05;
+        animation-duration: 1.2s;
+        animation-name: zoomResultados;
+    }
+    .capasDiseño::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        animation-name: zoomResultados;
+        animation-duration: 0.8s;
+        box-shadow: 0 0 0 8vw #ffffff0a;
+    }
+    .capasDiseño {
+        animation-name: zoomResultados;
+        box-shadow: 0 0 0 4vw #ffffff0f;
+        animation-duration: 0.4s;
+    }
+    .resultados p {
+        font-size: 1.5vw;
     }
 }
