@@ -2,7 +2,7 @@
 <main>
     <div class="mode-1" *ngIf="mode1">
         <div class="modo-juego">
-            <button (click)="gameMode()">Change Game Mode</button>
+            <button (click)="gameMode()">Change Mode</button>
         </div>
         <div class="score-mode">
             <div class="mode">
@@ -18,20 +18,20 @@
         <div class="juego">
             <div *ngIf="eleccion" class="eleccion">
                 <div class="background-triangulo">
-                    <img src="../assets/bg-triangle.svg" alt="bg-triangle">
+                    <img src="./assets/bg-triangle.svg" alt="bg-triangle">
                     <div (click)="papel()" class="papel">
                         <div class="content-img">
-                            <img src="../assets/icon-paper.svg" alt="icon-paper">
+                            <img src="./assets/icon-paper.svg" alt="icon-paper">
                         </div>
                     </div>
                     <div (click)="tijera()" class="tijera">
                         <div class="content-img">
-                            <img src="../assets/icon-scissors.svg" alt="icon-paper">
+                            <img src="./assets/icon-scissors.svg" alt="icon-paper">
                         </div>
                     </div>
                     <div (click)="piedra()" class="piedra">
                         <div class="content-img">
-                            <img src="../assets/icon-rock.svg" alt="icon-paper">
+                            <img src="./assets/icon-rock.svg" alt="icon-paper">
                         </div>
                     </div>
                 </div>
@@ -77,15 +77,15 @@
                     <p>
                         RULES
                     </p>
-                    <img (click)="closedRules()" src="../assets/icon-close.svg" alt="icon-close">
+                    <img (click)="closedRules()" src="./assets/icon-close.svg" alt="icon-close">
                 </div>
-                <img src="../assets/image-rules.svg" alt="Rules-img">
+                <img src="./assets/image-rules.svg" alt="Rules-img">
             </div>
         </div>
     </div>
     <div class="mode-2" *ngIf="mode2">
         <div class="modo-juego">
-            <button (click)="gameMode()">Change Game Mode</button>
+            <button (click)="gameMode()">Change Mode</button>
         </div>
         <div class="score-mode">
             <div class="mode">
@@ -102,31 +102,31 @@
         </div>
         <div class="juego">
             <div *ngIf="eleccion" class="eleccion">
-                <div class="background-triangulo">
-                    <img src="../assets/bg-pentagon.svg" alt="bg-triangle">
+                <div class="background-triangulo minimizar">
+                    <img src="./assets/bg-pentagon.svg" alt="bg-triangle">
                     <div (click)="papel2()" class="papel-2">
                         <div class="content-img">
-                            <img src="../assets/icon-paper.svg" alt="icon-paper">
+                            <img src="./assets/icon-paper.svg" alt="icon-paper">
                         </div>
                     </div>
                     <div (click)="tijera2()" class="tijera-2">
                         <div class="content-img">
-                            <img src="../assets/icon-scissors.svg" alt="icon-paper">
+                            <img src="./assets/icon-scissors.svg" alt="icon-paper">
                         </div>
                     </div>
                     <div (click)="piedra2()" class="piedra-2">
                         <div class="content-img">
-                            <img src="../assets/icon-rock.svg" alt="icon-paper">
+                            <img src="./assets/icon-rock.svg" alt="icon-paper">
                         </div>
                     </div>
                     <div (click)="lizard2()" class="lizard-2">
                         <div class="content-img">
-                            <img src="../assets/icon-lizard.svg" alt="icon-paper">
+                            <img src="./assets/icon-lizard.svg" alt="icon-paper">
                         </div>
                     </div>
                     <div (click)="spock2()" class="spock-2">
                         <div class="content-img">
-                            <img src="../assets/icon-spock.svg" alt="icon-paper">
+                            <img src="./assets/icon-spock.svg" alt="icon-paper">
                         </div>
                     </div>
                 </div>
@@ -172,10 +172,14 @@
                     <p>
                         RULES
                     </p>
-                    <img (click)="closedRules()" src="../assets/icon-close.svg" alt="icon-close">
+                    <img (click)="closedRules()" src="./assets/icon-close.svg" alt="icon-close">
                 </div>
-                <img src="../assets/image-rules-bonus.svg" alt="Rules-img">
+                <img src="./assets/image-rules-bonus.svg" alt="Rules-img">
             </div>
         </div>
     </div>
-</main>
+</main> 
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/Jank1510">Jehan Carlos Hurtado</a>.
+      </footer>  

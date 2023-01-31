@@ -52,7 +52,7 @@ export class AppComponent {
   papel() {
     this.eleccion = false
     this.proceso = true
-    this.seleccion = '../assets/icon-paper.svg'
+    this.seleccion = './assets/icon-paper.svg'
     this.clase = 'papel'
     this.cargandoRespuesta = true
     this.opacity = 'opacityOpen'
@@ -81,7 +81,7 @@ export class AppComponent {
   piedra() {
     this.eleccion = false
     this.proceso = true
-    this.seleccion = '../assets/icon-rock.svg'
+    this.seleccion = './assets/icon-rock.svg'
     this.clase = 'piedra'
     this.cargandoRespuesta = true
     this.opacity = 'opacityOpen'
@@ -115,7 +115,7 @@ export class AppComponent {
     this.cargandoRespuesta = true
     this.opacity = 'opacityOpen'
     this.EleccionDeLaMaquina()
-    this.seleccion = '../assets/icon-scissors.svg'
+    this.seleccion = './assets/icon-scissors.svg'
     setTimeout(() => {
       this.MostrarResultado = true
       if (this.EleccionMaquinaClase === 'tijera') {
@@ -147,7 +147,7 @@ export class AppComponent {
     if (randomValor == 1) {
       setTimeout(() => {
         this.EleccionMaquinaClase = 'papel'
-        this.EleccionMaquinaIMG = '../assets/icon-paper.svg'
+        this.EleccionMaquinaIMG = './assets/icon-paper.svg'
         this.cargandoRespuesta = false
         this.respuestaCargada = true
       }, 1500);
@@ -155,7 +155,7 @@ export class AppComponent {
       if (randomValor == 2) {
         setTimeout(() => {
           this.EleccionMaquinaClase = 'piedra'
-          this.EleccionMaquinaIMG = '../assets/icon-rock.svg'
+          this.EleccionMaquinaIMG = './assets/icon-rock.svg'
           this.cargandoRespuesta = false
           this.respuestaCargada = true
         }, 1500);
@@ -163,7 +163,7 @@ export class AppComponent {
         if (randomValor == 3) {
           setTimeout(() => {
             this.EleccionMaquinaClase = 'tijera'
-            this.EleccionMaquinaIMG = '../assets/icon-scissors.svg'
+            this.EleccionMaquinaIMG = './assets/icon-scissors.svg'
             this.cargandoRespuesta = false
             this.respuestaCargada = true
           }, 1500);
@@ -185,7 +185,7 @@ export class AppComponent {
   papel2() {
     this.eleccion = false
     this.proceso = true
-    this.seleccion = '../assets/icon-paper.svg'
+    this.seleccion = './assets/icon-paper.svg'
     this.clase = 'papel-2'
     this.cargandoRespuesta = true
     this.opacity = 'opacityOpen'
@@ -215,7 +215,7 @@ export class AppComponent {
   tijera2() {
     this.eleccion = false
     this.proceso = true
-    this.seleccion = '../assets/icon-scissors.svg'
+    this.seleccion = './assets/icon-scissors.svg'
     this.clase = 'tijera-2'
     this.cargandoRespuesta = true
     this.opacity = 'opacityOpen'
@@ -245,7 +245,7 @@ export class AppComponent {
   piedra2() {
     this.eleccion = false
     this.proceso = true
-    this.seleccion = '../assets/icon-rock.svg'
+    this.seleccion = './assets/icon-rock.svg'
     this.clase = 'piedra-2'
     this.cargandoRespuesta = true
     this.opacity = 'opacityOpen'
@@ -275,7 +275,7 @@ export class AppComponent {
   lizard2() {
     this.eleccion = false
     this.proceso = true
-    this.seleccion = '../assets/icon-lizard.svg'
+    this.seleccion = './assets/icon-lizard.svg'
     this.clase = 'lizard-2'
     this.cargandoRespuesta = true
     this.opacity = 'opacityOpen'
@@ -305,7 +305,7 @@ export class AppComponent {
   spock2() {
     this.eleccion = false
     this.proceso = true
-    this.seleccion = '../assets/icon-spock.svg'
+    this.seleccion = './assets/icon-spock.svg'
     this.clase = 'spock-2'
     this.cargandoRespuesta = true
     this.opacity = 'opacityOpen'
@@ -321,8 +321,7 @@ export class AppComponent {
         if (this.EleccionMaquinaClase === 'spock-2') {
           this.resultadoJuego = 'YOU TIED'
         } else {
-          if (this.EleccionMaquinaClase === 'paper-2' ||this.EleccionMaquinaClase === 'lizard-2') {
-
+          if (this.EleccionMaquinaClase === 'papel-2' ||this.EleccionMaquinaClase === 'lizard-2') {
             this.resultadoJuego = 'YOU LOSE'
             this.disenoCapaMaquina = 'capasDiseño'
             this.score = this.score - 1
@@ -341,7 +340,7 @@ export class AppComponent {
     if (randomValor == 1) {
       setTimeout(() => {
         this.EleccionMaquinaClase = 'papel-2'
-        this.EleccionMaquinaIMG = '../assets/icon-paper.svg'
+        this.EleccionMaquinaIMG = './assets/icon-paper.svg'
         this.cargandoRespuesta = false
         this.respuestaCargada = true
       }, 1500);
@@ -349,7 +348,7 @@ export class AppComponent {
       if (randomValor == 2) {
         setTimeout(() => {
           this.EleccionMaquinaClase = 'piedra-2'
-          this.EleccionMaquinaIMG = '../assets/icon-rock.svg'
+          this.EleccionMaquinaIMG = './assets/icon-rock.svg'
           this.cargandoRespuesta = false
           this.respuestaCargada = true
         }, 1500);
@@ -357,7 +356,7 @@ export class AppComponent {
         if (randomValor == 3) {
           setTimeout(() => {
             this.EleccionMaquinaClase = 'tijera-2'
-            this.EleccionMaquinaIMG = '../assets/icon-scissors.svg'
+            this.EleccionMaquinaIMG = './assets/icon-scissors.svg'
             this.cargandoRespuesta = false
             this.respuestaCargada = true
           }, 1500);
@@ -365,7 +364,7 @@ export class AppComponent {
           if (randomValor == 4) {
             setTimeout(() => {
               this.EleccionMaquinaClase = 'spock-2'
-              this.EleccionMaquinaIMG = '../assets/icon-spock.svg'
+              this.EleccionMaquinaIMG = './assets/icon-spock.svg'
               this.cargandoRespuesta = false
               this.respuestaCargada = true
             }, 1500);
@@ -373,7 +372,7 @@ export class AppComponent {
             if (randomValor == 5) {
               setTimeout(() => {
                 this.EleccionMaquinaClase = 'lizard-2'
-                this.EleccionMaquinaIMG = '../assets/icon-lizard.svg'
+                this.EleccionMaquinaIMG = './assets/icon-lizard.svg'
                 this.cargandoRespuesta = false
                 this.respuestaCargada = true
               }, 1500);

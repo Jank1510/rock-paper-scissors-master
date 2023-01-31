@@ -1,6 +1,7 @@
 main {
     font-family: 'Barlow Semi Condensed', sans-serif;
     padding-bottom: 2vw;
+    height: 100vh;
 }
 
 .fondo {
@@ -82,10 +83,7 @@ main {
 .background-triangulo {
     width: 42%;
     margin: auto;
-    margin-top: auto;
-    margin-top: auto;
     position: relative;
-    margin-top: 24%;
 }
 
 .margin-negativo {
@@ -206,8 +204,9 @@ main {
 }
 
 .my-pick {
-    margin-right: 6vw;
-    position: relative;
+    left: 0;
+    position: absolute;
+
 }
 
 .proceso-seleccion-detalles {
@@ -224,7 +223,8 @@ main {
 
 .respuestaCargada {
     animation-duration: 0.7s;
-    position: relative;
+    position: absolute;
+    right: 0;
 }
 
 .center {
@@ -233,8 +233,6 @@ main {
 }
 
 .resultados {
-    margin-left: -5vw;
-    margin-right: 1vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -248,6 +246,8 @@ main {
 }
 
 .modo-juego button {
+    font-size: 1vw;
+
     margin-top: 2vw;
     border: none;
     border-radius: 0.2vw;
@@ -255,6 +255,10 @@ main {
     box-shadow: 0px 0px 0.5vw 0px white;
     padding: 0.3vw;
     cursor: pointer;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #182042;
+    ;
 }
 
 .papel-2 {
@@ -341,6 +345,7 @@ main {
     from {
         transform: scale(0);
     }
+
     to {
         transform: scale(1);
     }
@@ -350,6 +355,7 @@ main {
     from {
         opacity: 0%;
     }
+
     to {
         opacity: 100%;
     }
@@ -359,6 +365,7 @@ main {
     from {
         opacity: 100%;
     }
+
     to {
         opacity: 0%;
     }
@@ -367,24 +374,35 @@ main {
 @media (min-width: 360px) {
     .juego {
         width: 100vw;
-        margin-top: 10vh;
+        margin: auto;
+
     }
+
     main {
         font-size: 6vw;
     }
+
+    .modo-juego button {
+        font-size: 4vw;
+    }
+
     .score-mode {
         width: 85vw;
         padding: 4.5vw;
     }
+
     .score-txt {
         font-size: 4vw;
     }
+
     .puntos {
         font-size: 10.7vw;
     }
+
     .background-triangulo {
         width: 55%;
     }
+
     .resultado {
         background-color: transparent;
         color: white;
@@ -393,38 +411,43 @@ main {
         border-radius: 1.5vw;
         cursor: pointer;
         font-size: 7.05vw;
-        position: absolute;
-        bottom: 1vw;
-        margin: auto;
     }
+
     .rules {
         padding: 14vw 7vw;
         font-size: 7.2vw;
     }
+
     .rules img {
         width: 100%;
     }
+
     .rules div img {
         width: 7vw;
         height: 7vw;
     }
+
     .my-pick {
         height: 40vw;
         width: 40vw;
     }
+
     .respuestaCargada {
         height: 40vw;
         width: 40vw;
     }
+
     .resultados {
         margin-top: 20vw;
         width: 75vw;
         position: absolute;
     }
+
     .resultados p {
         font-size: 6vw;
         margin-bottom: 3vw;
     }
+
     .resultados button {
         padding: 2.6vw 15vw;
         border: none;
@@ -432,10 +455,12 @@ main {
         font-size: 5vw;
         cursor: pointer;
     }
+
     .proceso p {
         margin-top: 52vw;
         font-size: 4.5vw;
     }
+
     .house-picked-black {
         width: 30vw;
         height: 30vw;
@@ -446,6 +471,7 @@ main {
         left: auto;
         top: 0;
     }
+
     .capasDiseño::after {
         content: "";
         position: absolute;
@@ -456,6 +482,7 @@ main {
         animation-duration: 1.2s;
         animation-name: zoomResultados;
     }
+
     .capasDiseño::before {
         content: "";
         position: absolute;
@@ -466,37 +493,65 @@ main {
         animation-duration: 0.8s;
         box-shadow: 0 0 0 20vw #ffffff0a;
     }
+
     .capasDiseño {
         animation-name: zoomResultados;
         box-shadow: 0 0 0 10vw #ffffff0f;
         animation-duration: 0.4s;
     }
+
     .resultados p {
         font-size: 10.5vw;
     }
+
+    .minimizar {
+        width: 45%;
+    }
+
+    .proceso {
+        height: 108vw;
+    }
+
+    .margin-negativo {
+        font-size: 2rem;
+    }
+    .attribution {color: white;
+        font-size: 2rem !important;
+        width: 100%;
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+ 
 }
 
 @media (min-width: 1281px) {
     .juego {
         width: 50vw;
-        margin-top: 0;
+        margin: auto;
     }
+
     main {
         font-size: 2vw;
     }
+
     .score-mode {
         width: 50vw;
         padding: 1.5vw;
     }
+
     .score-txt {
         font-size: 1vw;
     }
+
     .puntos {
         font-size: 2.7vw;
     }
+
     .background-triangulo {
         width: 42%;
     }
+
     .resultado {
         background-color: transparent;
         color: white;
@@ -509,34 +564,42 @@ main {
         bottom: 2vw;
         right: 2vw;
     }
+
     .rules {
         padding: 2vw 3vw;
         font-size: 2.2vw;
     }
+
     .rules img {
         width: 22vw;
     }
+
     .rules div img {
         width: 2vw;
         height: 2vw;
     }
+
     .my-pick {
         height: 18vw;
         width: 18vw;
     }
+
     .respuestaCargada {
         height: 18vw;
         width: 18vw;
     }
+
     .resultados {
-        margin-top: auto;
+        margin-top: 11vw;
         width: 12vw;
         position: relative;
     }
+
     .resultados p {
         font-size: 3vw;
         margin-bottom: 1vw;
     }
+
     .resultados button {
         padding: 0.6vw 3vw;
         border: none;
@@ -544,10 +607,12 @@ main {
         font-size: 1vw;
         cursor: pointer;
     }
+
     .proceso p {
         margin-top: 1vw;
         font-size: 1.5vw;
     }
+
     .house-picked-black {
         width: 12vw;
         height: 12vw;
@@ -558,6 +623,7 @@ main {
         left: auto;
         top: 0;
     }
+
     .capasDiseño::after {
         content: "";
         position: absolute;
@@ -568,6 +634,7 @@ main {
         animation-duration: 1.2s;
         animation-name: zoomResultados;
     }
+
     .capasDiseño::before {
         content: "";
         position: absolute;
@@ -578,12 +645,40 @@ main {
         animation-duration: 0.8s;
         box-shadow: 0 0 0 8vw #ffffff0a;
     }
+
     .capasDiseño {
         animation-name: zoomResultados;
         box-shadow: 0 0 0 4vw #ffffff0f;
         animation-duration: 0.4s;
     }
+
     .resultados p {
         font-size: 1.5vw;
     }
+
+    .minimizar {
+        width: 30%;
+    }
+
+    .proceso {
+        height: 40vw;
+    }
+
+    .modo-juego button {
+        font-size: 1vw;
+    }
+
+    .margin-negativo {
+        font-size: 2vw;
+    }
+
+    .attribution {
+        text-align: center;
+        color: white; 
+
+        font-size: 1.4vw !important;
+        width: 100%;
+    }
+
+ 
 }
