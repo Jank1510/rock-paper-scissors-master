@@ -27,6 +27,7 @@ export class AppComponent {
   mode1: boolean = true
   mode2: boolean = false
 
+
   gameMode() {
     if (this.mode1 === true) {
       this.mode1 = false
@@ -49,6 +50,22 @@ export class AppComponent {
     this.rules = true
   }
   /*metodos de eleccion*/
+  efectsounds(resultado: string): void {
+    let win = new Audio('./assets/sounds/win.mp3')
+    let lose = new Audio('./assets/sounds/lose.mp3')
+    let tied = new Audio('./assets/sounds/tied.mp3')
+    if (resultado == 'win') {
+      win.play()
+    } else {
+      if (resultado == 'lose') {
+        lose.play()
+      } else {
+        if (resultado == 'tied') {
+          tied.play()
+        }
+      }
+    }
+  }
   papel() {
     this.eleccion = false
     this.proceso = true
@@ -63,16 +80,17 @@ export class AppComponent {
         this.resultadoJuego = 'YOU LOSE'
         this.disenoCapaMaquina = 'capasDiseño'
         this.score = this.score - 1
-
+        this.efectsounds('lose')
       } else {
         if (this.EleccionMaquinaClase === 'papel') {
           this.resultadoJuego = 'YOU TIED'
+          this.efectsounds('tied')
         } else {
           if (this.EleccionMaquinaClase === 'piedra') {
             this.resultadoJuego = 'YOU WIN'
             this.disenoCapasUsuario = 'capasDiseño'
             this.score = this.score + 1
-
+            this.efectsounds('win')
           }
         }
       }
@@ -92,17 +110,17 @@ export class AppComponent {
         this.resultadoJuego = 'YOU WIN'
         this.disenoCapasUsuario = 'capasDiseño'
         this.score = this.score + 1
-
+        this.efectsounds('win')
       } else {
         if (this.EleccionMaquinaClase === 'papel') {
           this.resultadoJuego = 'YOU LOSE'
           this.disenoCapaMaquina = 'capasDiseño'
           this.score = this.score - 1
-
+          this.efectsounds('lose')
         } else {
           if (this.EleccionMaquinaClase === 'piedra') {
             this.resultadoJuego = 'YOU TIED'
-
+            this.efectsounds('tied')
           }
         }
       }
@@ -120,18 +138,19 @@ export class AppComponent {
       this.MostrarResultado = true
       if (this.EleccionMaquinaClase === 'tijera') {
         this.resultadoJuego = 'YOU TIED'
+        this.efectsounds('tied')
       } else {
         if (this.EleccionMaquinaClase === 'papel') {
           this.resultadoJuego = 'YOU WIN'
           this.disenoCapasUsuario = 'capasDiseño'
           this.score = this.score + 1
-
+          this.efectsounds('win')
         } else {
           if (this.EleccionMaquinaClase === 'piedra') {
             this.resultadoJuego = 'YOU LOSE'
             this.disenoCapaMaquina = 'capasDiseño'
             this.score = this.score - 1
-
+            this.efectsounds('lose')
           }
         }
       }
@@ -180,7 +199,6 @@ export class AppComponent {
     this.disenoCapaMaquina = ''
     this.disenoCapasUsuario = ''
   }
-
   /*segundo modo de juego */
   papel2() {
     this.eleccion = false
@@ -196,17 +214,17 @@ export class AppComponent {
         this.resultadoJuego = 'YOU WIN'
         this.disenoCapasUsuario = 'capasDiseño'
         this.score = this.score + 1
-
+        this.efectsounds('win')
       } else {
         if (this.EleccionMaquinaClase === 'papel-2') {
           this.resultadoJuego = 'YOU TIED'
+          this.efectsounds('tied')
         } else {
-          if (this.EleccionMaquinaClase === 'tijera-2' ||this.EleccionMaquinaClase === 'lizard-2') {
-
+          if (this.EleccionMaquinaClase === 'tijera-2' || this.EleccionMaquinaClase === 'lizard-2') {
             this.resultadoJuego = 'YOU LOSE'
             this.disenoCapaMaquina = 'capasDiseño'
             this.score = this.score - 1
-
+            this.efectsounds('lose')
           }
         }
       }
@@ -226,17 +244,17 @@ export class AppComponent {
         this.resultadoJuego = 'YOU WIN'
         this.disenoCapasUsuario = 'capasDiseño'
         this.score = this.score + 1
-
+        this.efectsounds('win')
       } else {
         if (this.EleccionMaquinaClase === 'tijera-2') {
           this.resultadoJuego = 'YOU TIED'
+          this.efectsounds('tied')
         } else {
-          if (this.EleccionMaquinaClase === 'spock-2' ||this.EleccionMaquinaClase === 'piedra-2') {
-
+          if (this.EleccionMaquinaClase === 'spock-2' || this.EleccionMaquinaClase === 'piedra-2') {
             this.resultadoJuego = 'YOU LOSE'
             this.disenoCapaMaquina = 'capasDiseño'
             this.score = this.score - 1
-
+            this.efectsounds('lose')
           }
         }
       }
@@ -256,16 +274,17 @@ export class AppComponent {
         this.resultadoJuego = 'YOU WIN'
         this.disenoCapasUsuario = 'capasDiseño'
         this.score = this.score + 1
-
+        this.efectsounds('win')
       } else {
         if (this.EleccionMaquinaClase === 'piedra-2') {
           this.resultadoJuego = 'YOU TIED'
+          this.efectsounds('tied')
         } else {
-          if (this.EleccionMaquinaClase === 'spock-2' ||this.EleccionMaquinaClase === 'papel-2') {
-
+          if (this.EleccionMaquinaClase === 'spock-2' || this.EleccionMaquinaClase === 'papel-2') {
             this.resultadoJuego = 'YOU LOSE'
             this.disenoCapaMaquina = 'capasDiseño'
             this.score = this.score - 1
+            this.efectsounds('lose')
 
           }
         }
@@ -286,17 +305,17 @@ export class AppComponent {
         this.resultadoJuego = 'YOU WIN'
         this.disenoCapasUsuario = 'capasDiseño'
         this.score = this.score + 1
-
+        this.efectsounds('win')
       } else {
         if (this.EleccionMaquinaClase === 'lizard-2') {
           this.resultadoJuego = 'YOU TIED'
+          this.efectsounds('tied')
         } else {
-          if (this.EleccionMaquinaClase === 'tijera-2' ||this.EleccionMaquinaClase === 'piedra-2') {
-
+          if (this.EleccionMaquinaClase === 'tijera-2' || this.EleccionMaquinaClase === 'piedra-2') {
             this.resultadoJuego = 'YOU LOSE'
             this.disenoCapaMaquina = 'capasDiseño'
             this.score = this.score - 1
-
+            this.efectsounds('lose')
           }
         }
       }
@@ -316,16 +335,17 @@ export class AppComponent {
         this.resultadoJuego = 'YOU WIN'
         this.disenoCapasUsuario = 'capasDiseño'
         this.score = this.score + 1
-
+        this.efectsounds('win')
       } else {
         if (this.EleccionMaquinaClase === 'spock-2') {
           this.resultadoJuego = 'YOU TIED'
+          this.efectsounds('tied')
         } else {
-          if (this.EleccionMaquinaClase === 'papel-2' ||this.EleccionMaquinaClase === 'lizard-2') {
+          if (this.EleccionMaquinaClase === 'papel-2' || this.EleccionMaquinaClase === 'lizard-2') {
             this.resultadoJuego = 'YOU LOSE'
             this.disenoCapaMaquina = 'capasDiseño'
             this.score = this.score - 1
-
+            this.efectsounds('lose')
           }
         }
       }
