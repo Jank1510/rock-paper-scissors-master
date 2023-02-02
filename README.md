@@ -18,7 +18,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
-# Description
+## Description
 The "rock, paper, scissors" web application allows users to play against the computer. Players can choose between "rock", "paper", or "scissors" or the extra game mode "rock, paper, scissors, lizard, spock". The outcome is determined by the rules of the game. It also includes a scoring system to keep track of wins and losses.
 
 **To do this challenge, you need a basic understanding of HTML ,CSS, TypesCript, JavaScript and Angular.**
